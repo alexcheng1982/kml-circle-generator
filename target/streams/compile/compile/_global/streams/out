@@ -1,0 +1,4 @@
+[0m[[0m[33mwarn[0m] [0m[0m/Users/alexcheng/Downloads/wstudio-kml-circle-b07fecb4075d/app/controllers/Application.scala:49:23: method copyArrayToImmutableIndexedSeq in class LowPriorityImplicits2 is deprecated (since 2.13.0): Implicit conversions from Array to immutable.IndexedSeq are implemented by copying; Use the more efficient non-copying ArraySeq.unsafeWrapArray or an explicit toIndexedSeq call[0m
+[0m[[0m[33mwarn[0m] [0m[0m    Ok(views.html.kml(kmls)).withHeaders([0m
+[0m[[0m[33mwarn[0m] [0m[0m                      ^[0m
+[0m[[0m[33mwarn[0m] [0m[0mone warning found[0m

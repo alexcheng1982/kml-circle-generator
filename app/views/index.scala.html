@@ -1,0 +1,116 @@
+@main("KML Circle Generator") {
+<section id="header">
+    <header>
+        <h1>KML Circle Generator</h1>
+        <p>Generate KML Circles For Google Earth</p>
+        <p>Preview with Google Earth web plugin</p>
+        <p>By <a href="https://vividcode.io" target="_blank">Fu Cheng</a></p>
+    </header>
+    <footer>
+        <a href="#center" class="button style2 scrolly scrolly-centered">Start</a>
+    </footer>
+</section>
+
+<section id="center" class="container box style3">
+    <header>
+        <h2>Circle Center & Radius</h2>
+        <p>Geo-location of circle's center and radius of the circle</p>
+    </header>
+    <form action="#">
+        <div class="row 50%">
+            <div id="map">
+
+            </div>
+        </div>
+        <div class="row 50%">
+            <div>Drag the marker to change location.</div>
+            <div>Current location is {{ centerLocation[0] }}, {{ centerLocation[1] }}</div>
+        </div>
+        <div class="row 50%">
+            <div class="6u">
+                <label for="radius">Radius</label>
+                <input id="radius" type="text" placeholder="Radius" data-ng-model="radius">
+            </div>
+            <div class="6u">
+                <label for="radius-unit">Unit</label>
+                <select id="radius-unit" data-ng-model="radiusUnit">
+                    <option value="km">km</option>
+                    <option value="mile">mile</option>
+                    <option value="meter">meter</option>
+                </select>
+            </div>
+        </div>
+    </form>
+    <footer>
+        <form action="#">
+            <div class="row">
+                <div class="12u">
+                    <ul class="actions">
+                        <li>
+                            <a href="#style" class="button">Customize Circle Style</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </form>
+    </footer>
+</section>
+
+<article id="style" class="container box style3">
+    <header>
+        <h2>Circle Style</h2>
+        <p>Choose circle fill color and line weight/color</p>
+    </header>
+    <form action="#">
+       <div class="row 50%">
+           <div class="6u">
+               <input type="checkbox" data-ng-model="useFillColor"/> Fill circle
+           </div>
+           <div class="6u">
+               <label for="fill-color">Fill color</label>
+               <input id="fill-color" data-ng-disabled="!useFillColor" colorpicker type="text" ng-model="fillColor" />
+           </div>
+       </div>
+       <div class="row 50%">
+            <div class="6u">
+               <label for="line-weight">Line weight</label>
+               <select id="line-weight" data-ng-model="lineWeight" data-ng-options="w for w in lineWeights"></select>
+            </div>
+            <div class="6u">
+                <label for="line-color">Line color</label>
+                <input id="line-color" colorpicker type="text" data-ng-model="lineColor" />
+            </div>
+        </div>
+    </form>
+    <footer>
+        <form action="#">
+            <div class="row">
+                <div class="12u">
+                    <ul class="actions">
+                        <li>
+                            <a href="#result" class="button">Generate</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </form>
+    </footer>
+</article>
+
+<article id="result" class="container box style3">
+    <header>
+        <h2>Your KML circle is ready</h2>
+        <p>Download the KML file or copy the link to use as <a href="https://developers.google.com/kml/documentation/kml_tut#network-links" target="_blank">Network Link</a> in <a href="https://earth.google.com/web/" target="_blank">Google Earth</a></p>
+    </header>
+    <form action="#">
+        <div class="row">
+            <div class="12u">
+                <ul class="actions">
+                    <li><a href="#" data-ng-href="{{getKmlUrl()}}" class="button">Download or Copy Link</a></li>
+                    <li><a href="#center" class="button style3">Re-generate</a></li>
+                </ul>
+            </div>
+        </div>
+    </form>
+</article>
+}
