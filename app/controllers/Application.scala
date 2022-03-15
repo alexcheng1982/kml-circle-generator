@@ -4,6 +4,7 @@ import play.api.mvc._
 import services.{GeoLocation, KmlCircleGenerator}
 
 import javax.inject.Inject
+import scala.collection.immutable.ArraySeq
 
 class Application @Inject() (cc: ControllerComponents) extends AbstractController(cc) {
 
@@ -46,7 +47,7 @@ class Application @Inject() (cc: ControllerComponents) extends AbstractControlle
       (points, circle._4, circle._5, circle._6)
     }
 
-    Ok(views.html.kml(kmls)).withHeaders(
+    Ok(views.html.kml(ArraySeq.unsafeWrapArray(kmls))).withHeaders(
       CONTENT_DISPOSITION -> "attachment; filename=circle.kml"
     ).as("application/vnd.google-earth.kml+xml")
   }
