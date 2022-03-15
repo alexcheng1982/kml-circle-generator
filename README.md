@@ -5,6 +5,10 @@ Generate [KML](https://developers.google.com/kml) circles for [Google Earth](htt
 
 ![KML circle in Google Earth](./kml-circle.png)
 
+## Live server
+
+[kml-circle-generator.herokuapp.com](https://kml-circle-generator.herokuapp.com/)
+
 ## Local development
 
 This project is created using [Play framework](https://www.playframework.com/).
