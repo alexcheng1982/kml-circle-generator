@@ -23,8 +23,17 @@
             </div>
         </div>
         <div class="row 50%">
-            <div>Drag the marker to change location.</div>
-            <div>Current location is {{ centerLocation[0] }}, {{ centerLocation[1] }}</div>
+            <div>Drag the marker to change location or enter the coordinates.</div>
+        </div>
+        <div class="row 50%">
+            <div class="6u">
+                <label for="lat-input">Latitude</label>
+                <input id="lat-input" type="text" data-ng-model="latInput" />
+            </div>
+            <div class="6u">
+                <label for="lng-input">Longitude</label>
+                <input id="lng-input" type="text" data-ng-model="lngInput" />
+            </div>
         </div>
         <div class="row 50%">
             <div class="6u">
